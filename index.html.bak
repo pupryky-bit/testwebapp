@@ -93,7 +93,7 @@
                     <i class="fas fa-cogs"></i>
                 </div>
                 <h3>Простая установка</h3>
-                <p>Лоадер (.exe) делает установку визуалов быстрой и понятной</p>
+                <p>Автоматический установщик (.exe) делает установку визуалов быстрой и понятной</p>
             </div>
         </div>
     </section>
@@ -132,7 +132,7 @@
                     <h3><i class="fas fa-download"></i> Beta версия для Minecraft 1.16.5</h3>
                     <p class="version-info">Совместимость: <strong>Minecraft Java Edition 1.16.5</strong></p>
                     <ul class="download-list">
-                        <li><i class="fas fa-check"></i> Удобный лоадер (.exe)</li>
+                        <li><i class="fas fa-check"></i> Автоматический установщик (.exe)</li>
                         <li><i class="fas fa-check"></i> Регулярные обновления</li>
                     </ul>
                 </div>
